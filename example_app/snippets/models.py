@@ -50,5 +50,5 @@ class Snippet(models.Model):
 
         # limit the number of instances retained
         snippets = Snippet.objects.all()
-        if len(snippets) > 100:
+        if snippets.count() > 100:
             snippets[0].delete()
